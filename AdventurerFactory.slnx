@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="ForgeFlow.Analyzers/ForgeFlow.Analyzers.csproj" />
+  <Project Path="ForgeFlow.Core/ForgeFlow.Core.csproj" />
+  <Project Path="ForgeFlow.Presentation.Unity/ForgeFlow.Presentation.Unity.csproj" />
+  <Project Path="ForgeFlow.Tests/ForgeFlow.Tests.csproj" />
+</Solution>

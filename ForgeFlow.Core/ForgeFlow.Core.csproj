@@ -1,0 +1,64 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Text.Json" Version="8.0.5" />
+  </ItemGroup>
+
+  <!-- Default game data is embedded in the DLL — Unity never touches these files -->
+  <ItemGroup>
+    <EmbeddedResource Include="Data\DefaultData\Items.json" LogicalName="ForgeFlow.Core.Data.Items.json" />
+    <EmbeddedResource Include="Data\DefaultData\Classes.json" LogicalName="ForgeFlow.Core.Data.Classes.json" />
+    <EmbeddedResource Include="Data\DefaultData\Recipes.json" LogicalName="ForgeFlow.Core.Data.Recipes.json" />
+    <EmbeddedResource Include="Data\DefaultData\Dungeons.json" LogicalName="ForgeFlow.Core.Data.Dungeons.json" />
+    <EmbeddedResource Include="Data\DefaultData\Structures.json" LogicalName="ForgeFlow.Core.Data.Structures.json" />
+    <EmbeddedResource Include="Data\DefaultData\ResourceNodes.json" LogicalName="ForgeFlow.Core.Data.ResourceNodes.json" />
+    <EmbeddedResource Include="Data\DefaultData\Villagers.json" LogicalName="ForgeFlow.Core.Data.Villagers.json" />
+    <EmbeddedResource Include="Data\DefaultData\TerrainBiomes.json" LogicalName="ForgeFlow.Core.Data.TerrainBiomes.json" />
+    <EmbeddedResource Include="Data\DefaultData\Themes.json" LogicalName="ForgeFlow.Core.Data.Themes.json" />
+    <EmbeddedResource Include="Data\DefaultData\Tutorials.json" LogicalName="ForgeFlow.Core.Data.Tutorials.json" />
+    <EmbeddedResource Include="Data\DefaultData\PathSegments.json" LogicalName="ForgeFlow.Core.Data.PathSegments.json" />
+    <EmbeddedResource Include="Data\DefaultData\PathGates.json" LogicalName="ForgeFlow.Core.Data.PathGates.json" />
+    <EmbeddedResource Include="Data\DefaultData\Localization\en.json" LogicalName="ForgeFlow.Core.Data.Localization.en.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Entities\Structures\" />
+  </ItemGroup>
+
+  <!-- Compile-time localization key enforcement (Change #19) -->
+  <ItemGroup>
+    <ProjectReference Include="..\ForgeFlow.Analyzers\ForgeFlow.Analyzers.csproj"
+                      OutputItemType="Analyzer"
+                      ReferenceOutputAssembly="false" />
+  </ItemGroup>
+
+  <!--
+    Auto-copy the build output to Unity's Plugins folder.
+    Creates the destination folder if it doesn't exist yet.
+  -->
+  <Target Name="CopyToUnity" AfterTargets="Build">
+    <PropertyGroup>
+      <UnityPluginDir>$(MSBuildProjectDirectory)\..\ForgeFlow.Unity\Assets\Plugins\ForgeFlow\</UnityPluginDir>
+    </PropertyGroup>
+    <MakeDir Directories="$(UnityPluginDir)" Condition="!Exists('$(UnityPluginDir)')" />
+    <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(UnityPluginDir)" SkipUnchangedFiles="true" />
+    <Copy SourceFiles="$(TargetDir)$(TargetName).pdb" DestinationFolder="$(UnityPluginDir)" SkipUnchangedFiles="true" Condition="Exists('$(TargetDir)$(TargetName).pdb')" />
+    <Copy SourceFiles="$(TargetDir)System.Text.Json.dll" DestinationFolder="$(UnityPluginDir)" SkipUnchangedFiles="true" Condition="Exists('$(TargetDir)System.Text.Json.dll')" />
+    <Copy SourceFiles="$(TargetDir)System.Text.Encodings.Web.dll" DestinationFolder="$(UnityPluginDir)" SkipUnchangedFiles="true" Condition="Exists('$(TargetDir)System.Text.Encodings.Web.dll')" />
+    <Copy SourceFiles="$(TargetDir)Microsoft.Bcl.AsyncInterfaces.dll" DestinationFolder="$(UnityPluginDir)" SkipUnchangedFiles="true" Condition="Exists('$(TargetDir)Microsoft.Bcl.AsyncInterfaces.dll')" />
+    <Copy SourceFiles="$(TargetDir)System.Threading.Tasks.Extensions.dll" DestinationFolder="$(UnityPluginDir)" SkipUnchangedFiles="true" Condition="Exists('$(TargetDir)System.Threading.Tasks.Extensions.dll')" />
+    <Copy SourceFiles="$(TargetDir)System.Buffers.dll" DestinationFolder="$(UnityPluginDir)" SkipUnchangedFiles="true" Condition="Exists('$(TargetDir)System.Buffers.dll')" />
+    <Copy SourceFiles="$(TargetDir)System.Memory.dll" DestinationFolder="$(UnityPluginDir)" SkipUnchangedFiles="true" Condition="Exists('$(TargetDir)System.Memory.dll')" />
+    <Copy SourceFiles="$(TargetDir)System.Numerics.Vectors.dll" DestinationFolder="$(UnityPluginDir)" SkipUnchangedFiles="true" Condition="Exists('$(TargetDir)System.Numerics.Vectors.dll')" />
+    <Copy SourceFiles="$(TargetDir)System.Runtime.CompilerServices.Unsafe.dll" DestinationFolder="$(UnityPluginDir)" SkipUnchangedFiles="true" Condition="Exists('$(TargetDir)System.Runtime.CompilerServices.Unsafe.dll')" />
+    <Message Importance="high" Text="Copied $(TargetFileName) + dependencies → $(UnityPluginDir)" />
+  </Target>
+
+</Project>

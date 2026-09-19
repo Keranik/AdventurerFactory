@@ -1,0 +1,57 @@
+[
+  {
+    "Id": "oak_tree",
+    "DisplayName": "Oak Tree",
+    "ResourceId": "wood",
+    "PreferredBiome": "Forest",
+    "MaxYield": 80,
+    "HarvestRate": 1.0,
+    "RegrowthRate": 0.15,
+    "IsRenewable": true,
+    "Tags": ["tree", "renewable"]
+  },
+  {
+    "Id": "pine_tree",
+    "DisplayName": "Pine Tree",
+    "ResourceId": "wood",
+    "PreferredBiome": "Forest",
+    "MaxYield": 60,
+    "HarvestRate": 1.2,
+    "RegrowthRate": 0.2,
+    "IsRenewable": true,
+    "Tags": ["tree", "renewable"]
+  },
+  {
+    "Id": "iron_vein",
+    "DisplayName": "Iron Vein",
+    "ResourceId": "ore",
+    "PreferredBiome": "Mountain",
+    "MaxYield": 120,
+    "HarvestRate": 0.8,
+    "RegrowthRate": 0.0,
+    "IsRenewable": false,
+    "Tags": ["ore", "finite"]
+  },
+  {
+    "Id": "crystal_deposit",
+    "DisplayName": "Crystal Deposit",
+    "ResourceId": "crystal",
+    "PreferredBiome": "Mountain",
+    "MaxYield": 40,
+    "HarvestRate": 0.5,
+    "RegrowthRate": 0.05,
+    "IsRenewable": true,
+    "Tags": ["crystal", "rare"]
+  },
+  {
+    "Id": "herb_patch",
+    "DisplayName": "Herb Patch",
+    "ResourceId": "herbs",
+    "PreferredBiome": "Plains",
+    "MaxYield": 50,
+    "HarvestRate": 1.5,
+    "RegrowthRate": 0.3,
+    "IsRenewable": true,
+    "Tags": ["herbs", "renewable"]
+  }
+]

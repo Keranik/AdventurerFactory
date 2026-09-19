@@ -1,0 +1,32 @@
+[
+  {
+    "Id": "path_straight",
+    "DisplayName": "Straight Path",
+    "NodeType": "Straight",
+    "SpeedMultiplier": 1.0,
+    "Capacity": 3,
+    "AllowsHeroes": true,
+    "AllowsItems": true,
+    "Tags": ["path"]
+  },
+  {
+    "Id": "path_splitter",
+    "DisplayName": "Splitter Path",
+    "NodeType": "Splitter",
+    "SpeedMultiplier": 1.0,
+    "Capacity": 6,
+    "AllowsHeroes": true,
+    "AllowsItems": true,
+    "Tags": ["path", "junction"]
+  },
+  {
+    "Id": "path_merger",
+    "DisplayName": "Merger Path",
+    "NodeType": "Merger",
+    "SpeedMultiplier": 1.0,
+    "Capacity": 6,
+    "AllowsHeroes": true,
+    "AllowsItems": true,
+    "Tags": ["path", "junction"]
+  }
+]

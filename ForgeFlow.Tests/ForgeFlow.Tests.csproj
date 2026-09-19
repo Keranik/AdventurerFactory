@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+
+    <IsPackable>false</IsPackable>
+    <IsTestProject>true</IsTestProject>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="coverlet.collector" Version="6.0.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
+    <PackageReference Include="xunit" Version="2.5.3" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.5.3" />
+    <!-- Roslyn APIs for analyzer tests (CSharpCompilation, CompilationWithAnalyzers) -->
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.9.2" />
+    <!-- Plain reference to analyzer project so test code can reference LocalizationKeyAnalyzer -->
+  </ItemGroup>
+
+  <ItemGroup>
+    <Using Include="Xunit" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ForgeFlow.Core\ForgeFlow.Core.csproj" />
+    <ProjectReference Include="..\ForgeFlow.Presentation.Unity\ForgeFlow.Presentation.Unity.csproj" />
+    <!-- Plain reference to analyzer project so test code can reference LocalizationKeyAnalyzer -->
+    <ProjectReference Include="..\ForgeFlow.Analyzers\ForgeFlow.Analyzers.csproj" />
+  </ItemGroup>
+
+</Project>

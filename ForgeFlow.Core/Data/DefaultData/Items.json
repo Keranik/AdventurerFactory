@@ -1,0 +1,420 @@
+[
+  {
+    "id": "iron_sword_1",
+    "tier": 1,
+    "material": "Iron",
+    "damageType": "Slashing",
+    "slot": "Weapon",
+    "baseDamage": 12,
+    "baseSpeed": 1.0,
+    "critChance": 0.05,
+    "baseDefense": 0,
+    "specialEffectId": "",
+    "visual": {
+      "bladeShape": "straight",
+      "gripMaterial": "leather",
+      "particleEmitters": ["spark"]
+    }
+  },
+  {
+    "id": "iron_dagger_1",
+    "tier": 1,
+    "material": "Iron",
+    "damageType": "Piercing",
+    "slot": "Weapon",
+    "baseDamage": 8,
+    "baseSpeed": 1.5,
+    "critChance": 0.15,
+    "baseDefense": 0,
+    "specialEffectId": "",
+    "visual": {
+      "bladeShape": "curved",
+      "gripMaterial": "leather",
+      "particleEmitters": []
+    }
+  },
+  {
+    "id": "wooden_staff_1",
+    "tier": 1,
+    "material": "Wood",
+    "damageType": "Arcane",
+    "slot": "Weapon",
+    "baseDamage": 10,
+    "baseSpeed": 0.8,
+    "critChance": 0.1,
+    "baseDefense": 0,
+    "specialEffectId": "arcane_burst",
+    "visual": {
+      "bladeShape": "staff",
+      "gripMaterial": "wood",
+      "particleEmitters": ["arcane_glow"]
+    }
+  },
+  {
+    "id": "iron_helm_1",
+    "tier": 1,
+    "material": "Iron",
+    "damageType": "Slashing",
+    "slot": "Helmet",
+    "baseDamage": 0,
+    "baseSpeed": 0,
+    "critChance": 0,
+    "baseDefense": 8,
+    "specialEffectId": "",
+    "visual": {
+      "bladeShape": "",
+      "gripMaterial": "iron",
+      "particleEmitters": []
+    }
+  },
+  {
+    "id": "iron_chestplate_1",
+    "tier": 1,
+    "material": "Iron",
+    "damageType": "Slashing",
+    "slot": "ChestArmor",
+    "baseDamage": 0,
+    "baseSpeed": 0,
+    "critChance": 0,
+    "baseDefense": 15,
+    "specialEffectId": "",
+    "visual": {
+      "bladeShape": "",
+      "gripMaterial": "iron",
+      "particleEmitters": []
+    }
+  },
+  {
+    "id": "leather_boots_1",
+    "tier": 1,
+    "material": "Iron",
+    "damageType": "Slashing",
+    "slot": "Boots",
+    "baseDamage": 0,
+    "baseSpeed": 0.1,
+    "critChance": 0,
+    "baseDefense": 5,
+    "specialEffectId": "",
+    "visual": {
+      "bladeShape": "",
+      "gripMaterial": "leather",
+      "particleEmitters": []
+    }
+  },
+  {
+    "id": "steel_sword_2",
+    "tier": 2,
+    "material": "Steel",
+    "damageType": "Slashing",
+    "slot": "Weapon",
+    "baseDamage": 22,
+    "baseSpeed": 1.1,
+    "critChance": 0.08,
+    "baseDefense": 0,
+    "specialEffectId": "",
+    "visual": {
+      "bladeShape": "straight",
+      "gripMaterial": "wrapped_leather",
+      "particleEmitters": ["spark", "gleam"]
+    }
+  },
+  {
+    "id": "steel_greatsword_2",
+    "tier": 2,
+    "material": "Steel",
+    "damageType": "Slashing",
+    "slot": "Weapon",
+    "baseDamage": 35,
+    "baseSpeed": 0.8,
+    "critChance": 0.1,
+    "baseDefense": 0,
+    "specialEffectId": "heavy_strike",
+    "visual": {
+      "bladeShape": "greatsword",
+      "gripMaterial": "wrapped_steel",
+      "particleEmitters": ["spark", "gleam", "impact"]
+    }
+  },
+  {
+    "id": "steel_chestplate_2",
+    "tier": 2,
+    "material": "Steel",
+    "damageType": "Slashing",
+    "slot": "ChestArmor",
+    "baseDamage": 0,
+    "baseSpeed": 0,
+    "critChance": 0,
+    "baseDefense": 25,
+    "specialEffectId": "",
+    "visual": {
+      "bladeShape": "",
+      "gripMaterial": "steel",
+      "particleEmitters": []
+    }
+  },
+  {
+    "id": "mithril_blade_4",
+    "tier": 4,
+    "material": "Mithril",
+    "damageType": "Slashing",
+    "slot": "Weapon",
+    "baseDamage": 45,
+    "baseSpeed": 1.3,
+    "critChance": 0.12,
+    "baseDefense": 0,
+    "specialEffectId": "mithril_gleam",
+    "visual": {
+      "bladeShape": "elegant",
+      "gripMaterial": "mithril_wire",
+      "particleEmitters": ["mithril_glow", "spark"]
+    }
+  },
+  {
+    "id": "dragonbone_greatsword_6",
+    "tier": 6,
+    "material": "Dragonbone",
+    "damageType": "Fire",
+    "slot": "Weapon",
+    "baseDamage": 78,
+    "baseSpeed": 0.9,
+    "critChance": 0.15,
+    "baseDefense": 0,
+    "specialEffectId": "dragon_flame",
+    "visual": {
+      "bladeShape": "jagged",
+      "gripMaterial": "dragonhide",
+      "particleEmitters": ["flame", "ember", "smoke"]
+    }
+  },
+  {
+    "id": "celestial_rapier_8",
+    "tier": 8,
+    "material": "Celestial",
+    "damageType": "Holy",
+    "slot": "Weapon",
+    "baseDamage": 110,
+    "baseSpeed": 1.6,
+    "critChance": 0.2,
+    "baseDefense": 0,
+    "specialEffectId": "divine_strike",
+    "visual": {
+      "bladeShape": "rapier",
+      "gripMaterial": "celestial_gold",
+      "particleEmitters": ["holy_glow", "star_trail", "divine_spark"]
+    }
+  },
+  {
+    "id": "void_scythe_10",
+    "tier": 10,
+    "material": "Void",
+    "damageType": "Void",
+    "slot": "Weapon",
+    "baseDamage": 160,
+    "baseSpeed": 1.0,
+    "critChance": 0.25,
+    "baseDefense": 0,
+    "specialEffectId": "void_rend",
+    "setId": "void_reaper_set",
+    "visual": {
+      "bladeShape": "scythe",
+      "gripMaterial": "void_crystal",
+      "particleEmitters": ["void_trail", "dark_mist", "reality_crack"]
+    }
+  },
+  {
+    "id": "gold",
+    "name": "Gold",
+    "displayName": "Gold",
+    "description": "Primary currency used for construction and expansion.",
+    "category": "Currency",
+    "tier": 0,
+    "isVirtual": true,
+    "stackLimit": 999999
+  },
+  {
+    "id": "mana",
+    "name": "Mana",
+    "displayName": "Mana",
+    "description": "Magical essence used for enchantments and special recipes.",
+    "category": "Currency",
+    "tier": 0,
+    "isVirtual": true,
+    "stackLimit": 999999
+  },
+  {
+    "id": "wood",
+    "name": "Wood",
+    "displayName": "Wood",
+    "description": "Basic timber resource gathered from forests.",
+    "category": "Resource",
+    "tier": 1,
+    "stackLimit": 9999
+  },
+  {
+    "id": "ore",
+    "name": "Ore",
+    "displayName": "Ore",
+    "description": "Raw mineral ore mined from mountain biomes.",
+    "category": "Resource",
+    "tier": 1,
+    "stackLimit": 9999
+  },
+  {
+    "id": "food",
+    "name": "Food",
+    "displayName": "Food",
+    "description": "Sustenance for villagers and heroes.",
+    "category": "Resource",
+    "tier": 1,
+    "stackLimit": 9999
+  },
+  {
+    "id": "sticks",
+    "name": "Sticks",
+    "displayName": "Sticks",
+    "description": "Gathered bare-handed from forests. Basic crafting material.",
+    "category": "Resource",
+    "tier": 1,
+    "stackLimit": 9999
+  },
+  {
+    "id": "stones",
+    "name": "Stones",
+    "displayName": "Stones",
+    "description": "Gathered bare-handed from mountain biomes.",
+    "category": "Resource",
+    "tier": 1,
+    "stackLimit": 9999
+  },
+  {
+    "id": "fiber",
+    "name": "Fiber",
+    "displayName": "Fiber",
+    "description": "Raw fiber gathered from plains biomes. Used for cloth and armor.",
+    "category": "Resource",
+    "tier": 1,
+    "stackLimit": 9999
+  },
+  {
+    "id": "logs",
+    "name": "Logs",
+    "displayName": "Logs",
+    "description": "Gathered with an axe from forests. Intermediate wood resource.",
+    "category": "Resource",
+    "tier": 2,
+    "stackLimit": 9999
+  },
+  {
+    "id": "iron_ore",
+    "name": "Iron Ore",
+    "displayName": "Iron Ore",
+    "description": "Raw iron extracted from mines. Smelted into ingots.",
+    "category": "Resource",
+    "tier": 1,
+    "stackLimit": 9999
+  },
+  {
+    "id": "iron_ingot",
+    "name": "Iron Ingot",
+    "displayName": "Iron Ingot",
+    "description": "Smelted iron bar. Used in tier 1 crafting recipes.",
+    "category": "Resource",
+    "tier": 1,
+    "stackLimit": 9999
+  },
+  {
+    "id": "steel_ingot",
+    "name": "Steel Ingot",
+    "displayName": "Steel Ingot",
+    "description": "Refined steel bar. Used in tier 2 crafting recipes.",
+    "category": "Resource",
+    "tier": 2,
+    "stackLimit": 9999
+  },
+  {
+    "id": "mithril_ingot",
+    "name": "Mithril Ingot",
+    "displayName": "Mithril Ingot",
+    "description": "Rare mithril bar. Used in tier 4 crafting recipes.",
+    "category": "Resource",
+    "tier": 4,
+    "stackLimit": 9999
+  },
+  {
+    "id": "dragonbone_shard",
+    "name": "Dragonbone Shard",
+    "displayName": "Dragonbone Shard",
+    "description": "Fragment of dragonbone. Used in tier 6 crafting recipes.",
+    "category": "Resource",
+    "tier": 6,
+    "stackLimit": 9999
+  },
+  {
+    "id": "raw_mana",
+    "name": "Raw Mana",
+    "displayName": "Raw Mana",
+    "description": "Crystallized magical energy. Required for enchanted recipes.",
+    "category": "Resource",
+    "tier": 1,
+    "stackLimit": 9999
+  },
+  {
+    "id": "wood_plank",
+    "name": "Wood Plank",
+    "displayName": "Wood Plank",
+    "description": "Processed wood plank. Used in staff and construction recipes.",
+    "category": "Resource",
+    "tier": 1,
+    "stackLimit": 9999
+  },
+  {
+    "id": "stone_hatchet",
+    "name": "Stone Hatchet",
+    "displayName": "Stone Hatchet",
+    "description": "Basic tool crafted from stick + stone. Gathers logs.",
+    "category": "Tool",
+    "tier": 1,
+    "maxDurability": 80
+  },
+  {
+    "id": "iron_axe",
+    "name": "Iron Axe",
+    "displayName": "Iron Axe",
+    "description": "Iron forestry tool. Gathers planks from forests.",
+    "category": "Tool",
+    "tier": 2,
+    "maxDurability": 150
+  },
+  {
+    "id": "pickaxe",
+    "name": "Pickaxe",
+    "displayName": "Pickaxe",
+    "description": "Mining tool. Gathers ore from mountain biomes.",
+    "category": "Tool",
+    "tier": 1,
+    "maxDurability": 100
+  },
+  {
+    "id": "iron_pickaxe",
+    "name": "Iron Pickaxe",
+    "displayName": "Iron Pickaxe",
+    "description": "Improved mining tool. Gathers refined ore.",
+    "category": "Tool",
+    "tier": 2,
+    "maxDurability": 150
+  },
+  {
+    "id": "wooden_spear_0",
+    "name": "Wooden Spear",
+    "displayName": "Wooden Spear",
+    "description": "A crude spear whittled from sticks. Tier 0 weapon for untested warriors.",
+    "tier": 0,
+    "slot": "Weapon",
+    "material": "Wood",
+    "damageType": "Piercing",
+    "baseDamage": 5,
+    "baseSpeed": 1.0,
+    "critChance": 0.05,
+    "baseDefense": 0
+  }
+]

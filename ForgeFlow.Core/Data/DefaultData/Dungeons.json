@@ -1,0 +1,56 @@
+[
+  {
+    "id": "goblin_caves",
+    "tier": 1,
+    "theme": "GoblinCaves",
+    "penalty": 20.0,
+    "randomEventModifierRange": 10.0,
+    "possibleDropItemIds": ["iron_ore", "wood_plank"],
+    "recommendedHeroLevel": 1
+  },
+  {
+    "id": "crypts",
+    "tier": 2,
+    "theme": "Crypts",
+    "penalty": 35.0,
+    "randomEventModifierRange": 12.0,
+    "possibleDropItemIds": ["steel_ingot", "raw_mana"],
+    "recommendedHeroLevel": 5
+  },
+  {
+    "id": "dragon_lairs",
+    "tier": 4,
+    "theme": "DragonLairs",
+    "penalty": 55.0,
+    "randomEventModifierRange": 15.0,
+    "possibleDropItemIds": ["dragonbone_shard", "raw_mana"],
+    "recommendedHeroLevel": 15
+  },
+  {
+    "id": "cosmic_dungeons",
+    "tier": 8,
+    "theme": "CosmicDungeons",
+    "penalty": 80.0,
+    "randomEventModifierRange": 20.0,
+    "possibleDropItemIds": ["celestial_shard", "void_crystal"],
+    "recommendedHeroLevel": 30
+  },
+  {
+    "id": "void_rift",
+    "tier": 9,
+    "theme": "VoidRift",
+    "penalty": 95.0,
+    "randomEventModifierRange": 25.0,
+    "possibleDropItemIds": ["void_crystal", "reality_fragment"],
+    "recommendedHeroLevel": 40
+  },
+  {
+    "id": "infinite_abyss",
+    "tier": 10,
+    "theme": "InfiniteAbyss",
+    "penalty": 110.0,
+    "randomEventModifierRange": 30.0,
+    "possibleDropItemIds": ["void_crystal", "god_fragment"],
+    "recommendedHeroLevel": 50
+  }
+]

@@ -1,0 +1,102 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ForgeFlow.Core\ForgeFlow.Core.csproj" />
+    <!-- Compile-time localization key enforcement (Change #19) -->
+    <ProjectReference Include="..\ForgeFlow.Analyzers\ForgeFlow.Analyzers.csproj"
+                      OutputItemType="Analyzer"
+                      ReferenceOutputAssembly="false" />
+  </ItemGroup>
+
+  <!--
+    Unity assembly references — paths point at the local Unity 6 Editor install.
+    Set UNITY_EDITOR_DIR environment variable or edit the default below to
+    match your setup.  Private=false so the Unity DLLs are NOT copied into
+    the output folder (Unity already has them at runtime).
+  -->
+  <PropertyGroup>
+    <!-- Prefer MSBuild -p:UnityEditorDir=... or env UNITY_EDITOR_DIR over the Windows default. -->
+    <UnityEditorDir Condition="'$(UnityEditorDir)'=='' and '$(UNITY_EDITOR_DIR)'!=''">$(UNITY_EDITOR_DIR)</UnityEditorDir>
+    <UnityEditorDir Condition="'$(UnityEditorDir)'==''">C:\Program Files\Unity\Hub\Editor\6000.4.1f1\Editor\Data</UnityEditorDir>
+    <UnityManagedDir>$(UnityEditorDir)\Managed\UnityEngine</UnityManagedDir>
+    <UnityPackageCacheDir>$(UnityEditorDir)\Resources\PackageManager\ProjectTemplates\libcache\com.unity.template.3d-cross-platform-17.0.14\ScriptAssemblies</UnityPackageCacheDir>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>$(UnityManagedDir)\UnityEngine.CoreModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.PhysicsModule">
+      <HintPath>$(UnityManagedDir)\UnityEngine.PhysicsModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UIModule">
+      <HintPath>$(UnityManagedDir)\UnityEngine.UIModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UIElementsModule">
+      <HintPath>$(UnityManagedDir)\UnityEngine.UIElementsModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.IMGUIModule">
+      <HintPath>$(UnityManagedDir)\UnityEngine.IMGUIModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.InputLegacyModule">
+      <HintPath>$(UnityManagedDir)\UnityEngine.InputLegacyModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.AudioModule">
+      <HintPath>$(UnityManagedDir)\UnityEngine.AudioModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.ParticleSystemModule">
+      <HintPath>$(UnityManagedDir)\UnityEngine.ParticleSystemModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TextRenderingModule">
+      <HintPath>$(UnityManagedDir)\UnityEngine.TextRenderingModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Unity.InputSystem">
+      <HintPath>$(UnityPackageCacheDir)\Unity.InputSystem.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>$(UnityPackageCacheDir)\Unity.TextMeshPro.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>$(UnityPackageCacheDir)\UnityEngine.UI.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="UI\Windows\" />
+  </ItemGroup>
+
+  <!--
+    Auto-copy the Presentation DLL + PDB to Unity's Plugins folder on every build.
+    Mirrors the Core pattern: all logic lives in precompiled DLLs, not loose scripts.
+  -->
+  <Target Name="CopyDllToUnity" AfterTargets="Build">
+    <PropertyGroup>
+      <UnityPluginDir>$(MSBuildProjectDirectory)\..\ForgeFlow.Unity\Assets\Plugins\ForgeFlow.Presentation\</UnityPluginDir>
+    </PropertyGroup>
+    <MakeDir Directories="$(UnityPluginDir)" Condition="!Exists('$(UnityPluginDir)')" />
+    <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(UnityPluginDir)" SkipUnchangedFiles="true" />
+    <Copy SourceFiles="$(TargetDir)$(TargetName).pdb" DestinationFolder="$(UnityPluginDir)" SkipUnchangedFiles="true" Condition="Exists('$(TargetDir)$(TargetName).pdb')" />
+    <Message Importance="high" Text="Copied $(TargetFileName) + PDB → $(UnityPluginDir)" />
+  </Target>
+
+</Project>

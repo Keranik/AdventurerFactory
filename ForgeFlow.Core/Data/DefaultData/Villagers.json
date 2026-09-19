@@ -1,0 +1,31 @@
+[
+  {
+    "Id": "villager_basic",
+    "DisplayName": "Villager",
+    "DefaultJob": "Idle",
+    "BaseWorkRate": 1.0,
+    "BaseMovementSpeed": 2.0,
+    "BaseStamina": 100,
+    "Tags": ["villager"]
+  },
+  {
+    "Id": "villager_skilled",
+    "DisplayName": "Skilled Villager",
+    "DefaultJob": "Idle",
+    "BaseWorkRate": 1.5,
+    "BaseMovementSpeed": 2.5,
+    "BaseStamina": 120,
+    "UnlockTier": 2,
+    "Tags": ["villager", "skilled"]
+  },
+  {
+    "Id": "villager_master",
+    "DisplayName": "Master Villager",
+    "DefaultJob": "Idle",
+    "BaseWorkRate": 2.0,
+    "BaseMovementSpeed": 3.0,
+    "BaseStamina": 150,
+    "UnlockTier": 4,
+    "Tags": ["villager", "master"]
+  }
+]

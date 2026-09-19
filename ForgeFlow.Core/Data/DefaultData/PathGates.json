@@ -1,0 +1,9 @@
+[
+  {
+    "Id": "pathgate_basic",
+    "DisplayName": "Path Gate",
+    "Description": "A rotatable signpost that directs villagers into or out of buildings. Facing toward = Entrance, facing away = Exit.",
+    "GateRange": 1,
+    "Tags": ["connection"]
+  }
+]

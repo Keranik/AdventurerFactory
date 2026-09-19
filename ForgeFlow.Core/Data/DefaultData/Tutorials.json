@@ -1,0 +1,669 @@
+[
+  {
+    "Id": "p1_01_place_home",
+    "DisplayName": "Place a Primitive Home",
+    "Order": 1,
+    "Phase": 1,
+    "HintText": "Every great factory begins with a Primitive Home. This is where your villagers will be born.",
+    "CelebrationMessage": "Your Primitive Home is placed! Villagers will spawn here.",
+    "Conditions": [
+      {
+        "Type": "PlaceSpecificStructure",
+        "TargetId": "Spawner",
+        "RequiredCount": 1,
+        "HighlightTarget": "hotbar_spawner",
+        "StepMessage": "Place a Primitive Home by selecting the Spawner icon on the hotbar, then click on a tile on the map.",
+        "CompletionMessage": "Primitive Home placed!"
+      }
+    ],
+    "Rewards": { "gold": 50 },
+    "Tags": ["tutorial", "phase1"]
+  },
+  {
+    "Id": "p1_02_exit_gate",
+    "DisplayName": "Place an Exit Gate",
+    "Order": 2,
+    "Phase": 1,
+    "PrerequisiteMissionId": "p1_01_place_home",
+    "HintText": "Villagers need a way out! Place an exit gate so they can leave the Primitive Home.",
+    "CelebrationMessage": "Exit placed! Villagers will leave the Primitive Home onto the path.",
+    "Conditions": [
+      {
+        "Type": "PlacePathGateExit",
+        "RequiredCount": 1,
+        "HighlightTarget": "hotbar_pathgate",
+        "StepMessage": "Select the PathGate tool. Place it adjacent to the Primitive Home, facing away from it. That makes it an Exit — villagers leave the building onto the path.",
+        "CompletionMessage": "Exit gate placed!"
+      }
+    ],
+    "Rewards": { "gold": 25 },
+    "Tags": ["tutorial", "phase1"]
+  },
+  {
+    "Id": "p1_03_place_forestry",
+    "DisplayName": "Place a Forestry",
+    "Order": 3,
+    "Phase": 1,
+    "PrerequisiteMissionId": "p1_02_exit_gate",
+    "HintText": "Your villager needs a job! Place a Forestry gathering spot on a forest tile.",
+    "CelebrationMessage": "Forestry placed! Now villagers can gather wood.",
+    "Conditions": [
+      {
+        "Type": "PlaceSpecificStructure",
+        "TargetId": "Forestry",
+        "RequiredCount": 1,
+        "HighlightTarget": "hotbar_forestry",
+        "HighlightArea": "biome_forest",
+        "StepMessage": "Place a Forestry gathering spot on a forest biome tile. The highlighted tiles show valid forest locations.",
+        "CompletionMessage": "Forestry placed!"
+      }
+    ],
+    "Rewards": { "gold": 25 },
+    "Tags": ["tutorial", "phase1"]
+  },
+  {
+    "Id": "p1_04_forestry_entrance",
+    "DisplayName": "Forestry Entrance Gate",
+    "Order": 4,
+    "Phase": 1,
+    "PrerequisiteMissionId": "p1_03_place_forestry",
+    "HintText": "Villagers need a way in! Place an entrance gate on the Forestry so they can enter.",
+    "CelebrationMessage": "Entrance placed! Villagers walking past will turn in to gather.",
+    "Conditions": [
+      {
+        "Type": "PlacePathGateEntrance",
+        "RequiredCount": 1,
+        "HighlightTarget": "hotbar_pathgate",
+        "StepMessage": "Place a PathGate facing toward the Forestry to create an Entrance. Villagers walking along the path will turn off and enter the building.",
+        "CompletionMessage": "Entrance gate placed on Forestry!"
+      }
+    ],
+    "Rewards": { "gold": 25 },
+    "Tags": ["tutorial", "phase1"]
+  },
+  {
+    "Id": "p1_05_connect_path",
+    "DisplayName": "Draw a Connecting Path",
+    "Order": 5,
+    "Phase": 1,
+    "PrerequisiteMissionId": "p1_04_forestry_entrance",
+    "HintText": "Draw a path from the Primitive Home exit to the Forestry entrance so your villager can reach the gathering spot.",
+    "CelebrationMessage": "Path connected! Your villager can now reach the Forestry.",
+    "Conditions": [
+      {
+        "Type": "BuildPath",
+        "RequiredCount": 3,
+        "HighlightTarget": "hotbar_path",
+        "StepMessage": "Select the Path tool from the hotbar, then draw a path connecting the exit gate to the Forestry entrance gate.",
+        "CompletionMessage": "Path drawn and connected!"
+      }
+    ],
+    "Rewards": { "gold": 50 },
+    "Tags": ["tutorial", "phase1"]
+  },
+  {
+    "Id": "p1_06_watch_gathering",
+    "DisplayName": "Watch Gathering",
+    "Order": 6,
+    "Phase": 1,
+    "PrerequisiteMissionId": "p1_05_connect_path",
+    "HintText": "Your villager will spawn, walk along the path, and enter the Forestry. With bare hands, he can only pick up sticks!",
+    "CelebrationMessage": "He's gathering sticks! With no tool equipped, bare hands can only collect sticks. An axe would let him collect logs!",
+    "Conditions": [
+      {
+        "Type": "WatchVillagerGather",
+        "TargetId": "sticks",
+        "RequiredCount": 1,
+        "HighlightTarget": "forestry_structure",
+        "StepMessage": "Watch the villager gather. With bare hands he can only pick up sticks. If he had an axe, he could collect logs!",
+        "CompletionMessage": "Sticks gathered!"
+      }
+    ],
+    "Rewards": { "gold": 25 },
+    "Tags": ["tutorial", "phase1"]
+  },
+  {
+    "Id": "p1_07_place_stockpile",
+    "DisplayName": "Place a Stockpile",
+    "Order": 7,
+    "Phase": 1,
+    "PrerequisiteMissionId": "p1_06_watch_gathering",
+    "HintText": "The villager is carrying sticks but has nowhere to drop them off. Place a Stockpile!",
+    "CelebrationMessage": "Stockpile placed! Villagers can drop off and pick up resources here.",
+    "Conditions": [
+      {
+        "Type": "PlaceSpecificStructure",
+        "TargetId": "Stockpile",
+        "RequiredCount": 1,
+        "HighlightTarget": "hotbar_stockpile",
+        "StepMessage": "Place a Stockpile nearby. This will be the drop-off point for gathered resources.",
+        "CompletionMessage": "Stockpile placed!"
+      }
+    ],
+    "Rewards": { "gold": 25 },
+    "Tags": ["tutorial", "phase1"]
+  },
+  {
+    "Id": "p1_08_select_sticks_filter",
+    "DisplayName": "Select Sticks in Stockpile",
+    "Order": 8,
+    "Phase": 1,
+    "PrerequisiteMissionId": "p1_07_place_stockpile",
+    "HintText": "Your Stockpile accepts everything by default. Open the Stockpile Inspector and use the Product Picker to select 'sticks' so only sticks are stored here.",
+    "CelebrationMessage": "Stockpile filter set! Now only sticks will be accepted. This keeps your storage organized.",
+    "Conditions": [
+      {
+        "Type": "SelectStockpileProduct",
+        "TargetId": "sticks",
+        "RequiredCount": 1,
+        "HighlightTarget": "stockpile_structure",
+        "StepMessage": "Click on the Stockpile to open the Inspector, then press the '+ Add Item Filter' button and select 'sticks' from the Product Picker.",
+        "CompletionMessage": "Sticks filter selected!"
+      }
+    ],
+    "Rewards": { "gold": 25 },
+    "Tags": ["tutorial", "phase1"]
+  },
+  {
+    "Id": "p1_09_stockpile_entrance",
+    "DisplayName": "Stockpile Entrance Gate",
+    "Order": 9,
+    "Phase": 1,
+    "PrerequisiteMissionId": "p1_08_select_sticks_filter",
+    "HintText": "Place an entrance gate on the Stockpile so villagers carrying items can enter and drop them off.",
+    "CelebrationMessage": "Entrance gate on Stockpile placed!",
+    "Conditions": [
+      {
+        "Type": "PlacePathGateEntrance",
+        "RequiredCount": 1,
+        "HighlightTarget": "hotbar_pathgate",
+        "StepMessage": "Place a PathGate facing toward the Stockpile to create an Entrance.",
+        "CompletionMessage": "Stockpile entrance placed!"
+      }
+    ],
+    "Rewards": { "gold": 25 },
+    "Tags": ["tutorial", "phase1"]
+  },
+  {
+    "Id": "p1_10_forestry_exit",
+    "DisplayName": "Forestry Exit Gate",
+    "Order": 10,
+    "Phase": 1,
+    "PrerequisiteMissionId": "p1_09_stockpile_entrance",
+    "HintText": "The villager needs a way out of the Forestry! Place an exit gate so he can leave after gathering.",
+    "CelebrationMessage": "Exit gate on Forestry placed! The villager can now leave with his sticks.",
+    "Conditions": [
+      {
+        "Type": "PlacePathGateExit",
+        "RequiredCount": 1,
+        "HighlightTarget": "hotbar_pathgate",
+        "StepMessage": "Place a PathGate facing away from the Forestry to create an Exit. Villagers will leave the building onto the path.",
+        "CompletionMessage": "Forestry exit placed!"
+      }
+    ],
+    "Rewards": { "gold": 25 },
+    "Tags": ["tutorial", "phase1"]
+  },
+  {
+    "Id": "p1_11_connect_to_stockpile",
+    "DisplayName": "Connect to Stockpile",
+    "Order": 11,
+    "Phase": 1,
+    "PrerequisiteMissionId": "p1_10_forestry_exit",
+    "HintText": "Draw a path from the Forestry exit to the Stockpile entrance so villagers can deliver their sticks.",
+    "CelebrationMessage": "Path connected! The drop-off route is ready.",
+    "Conditions": [
+      {
+        "Type": "BuildPath",
+        "RequiredCount": 2,
+        "HighlightTarget": "hotbar_path",
+        "StepMessage": "Draw a path from the Forestry exit gate to the Stockpile entrance gate.",
+        "CompletionMessage": "Connected to Stockpile!"
+      }
+    ],
+    "Rewards": { "gold": 25 },
+    "Tags": ["tutorial", "phase1"]
+  },
+  {
+    "Id": "p1_12_watch_dropoff",
+    "DisplayName": "Watch the Drop-Off",
+    "Order": 12,
+    "Phase": 1,
+    "PrerequisiteMissionId": "p1_11_connect_to_stockpile",
+    "HintText": "Watch the villager leave the Forestry carrying sticks and drop them off at the Stockpile.",
+    "CelebrationMessage": "The villager dropped off sticks at the Stockpile! Your first delivery route is working!",
+    "Conditions": [
+      {
+        "Type": "VillagerDropOffItem",
+        "TargetId": "sticks",
+        "RequiredCount": 1,
+        "HighlightTarget": "stockpile_structure",
+        "StepMessage": "Watch the villager exit the Forestry, walk to the Stockpile, and drop off the sticks.",
+        "CompletionMessage": "Sticks delivered to Stockpile!"
+      }
+    ],
+    "Rewards": { "gold": 50 },
+    "Tags": ["tutorial", "phase1"]
+  },
+  {
+    "Id": "p1_13_stockpile_exit",
+    "DisplayName": "Stockpile Exit Gate",
+    "Order": 13,
+    "Phase": 1,
+    "PrerequisiteMissionId": "p1_12_watch_dropoff",
+    "HintText": "The villager dropped off his sticks but is stuck in the Stockpile. Place an exit gate so he can leave!",
+    "CelebrationMessage": "Stockpile exit placed!",
+    "Conditions": [
+      {
+        "Type": "PlacePathGateExit",
+        "RequiredCount": 1,
+        "HighlightTarget": "hotbar_pathgate",
+        "StepMessage": "Place a PathGate facing away from the Stockpile to create an Exit.",
+        "CompletionMessage": "Stockpile exit placed!"
+      }
+    ],
+    "Rewards": { "gold": 25 },
+    "Tags": ["tutorial", "phase1"]
+  },
+  {
+    "Id": "p1_14_loop_path",
+    "DisplayName": "Complete the Loop",
+    "Order": 14,
+    "Phase": 1,
+    "PrerequisiteMissionId": "p1_13_stockpile_exit",
+    "HintText": "Draw a loop path from the Stockpile exit back toward the Forestry entrance. This creates a repeating production loop!",
+    "CelebrationMessage": "Your first production loop is complete! The villager will gather, drop off, and repeat. But he's getting tired...",
+    "Conditions": [
+      {
+        "Type": "BuildPath",
+        "RequiredCount": 3,
+        "HighlightTarget": "hotbar_path",
+        "StepMessage": "Draw a path from the Stockpile exit back toward the Forestry entrance to create a loop. Careful with routing — if you lead back to the wrong entrance, villagers get stuck!",
+        "CompletionMessage": "Loop path drawn!"
+      }
+    ],
+    "Rewards": { "gold": 50 },
+    "Tags": ["tutorial", "phase1"]
+  },
+  {
+    "Id": "p1_15_place_inn",
+    "DisplayName": "Place a Resting Spot",
+    "Order": 15,
+    "Phase": 1,
+    "PrerequisiteMissionId": "p1_14_loop_path",
+    "HintText": "Workers get exhausted! Place a Resting Spot (Inn) so your villager can recover stamina. The Inn won't accept villagers carrying goods — they must drop off first!",
+    "CelebrationMessage": "Resting Spot is ready! Your villager will rest here after dropping off sticks.",
+    "Conditions": [
+      {
+        "Type": "PlaceSpecificStructure",
+        "TargetId": "Inn",
+        "RequiredCount": 1,
+        "HighlightTarget": "hotbar_inn",
+        "StepMessage": "Place a Resting Spot (Inn). Workers need rest after gathering!",
+        "CompletionMessage": "Inn placed!"
+      },
+      {
+        "Type": "PlacePathGateEntrance",
+        "RequiredCount": 1,
+        "HighlightTarget": "hotbar_pathgate",
+        "StepMessage": "Place a PathGate facing toward the Inn to create an Entrance. Remember: the Inn rejects villagers carrying items!",
+        "CompletionMessage": "Inn entrance placed!"
+      },
+      {
+        "Type": "PlacePathGateExit",
+        "RequiredCount": 1,
+        "HighlightTarget": "hotbar_pathgate",
+        "StepMessage": "Place a PathGate facing away from the Inn to create an Exit. Rested villagers will leave and continue the loop.",
+        "CompletionMessage": "Inn exit placed!"
+      }
+    ],
+    "Rewards": { "gold": 75 },
+    "Tags": ["tutorial", "phase1"]
+  },
+  {
+    "Id": "p1_16_watch_full_loop",
+    "DisplayName": "Watch the Full Loop",
+    "Order": 16,
+    "Phase": 1,
+    "PrerequisiteMissionId": "p1_15_place_inn",
+    "HintText": "Watch the full production loop in action: gather sticks → drop off at Stockpile → rest at the Inn → repeat!",
+    "CelebrationMessage": "Phase 1 Complete! Your production loop is fully operational! The villager gathers, delivers, rests, and repeats. You've mastered the basics of factory building. Next up: stone gathering, crafting, and class training!",
+    "Conditions": [
+      {
+        "Type": "WatchFullLoop",
+        "RequiredCount": 1,
+        "HighlightTarget": "full_loop",
+        "StepMessage": "Watch your villager loop: gather sticks at the Forestry, drop them off at the Stockpile, rest at the Inn, and repeat until you have at least 20 sticks in the Stockpile!",
+        "CompletionMessage": "Phase 1 Complete! Your factory is alive!"
+      }
+    ],
+    "Rewards": { "gold": 100 },
+    "Tags": ["tutorial", "phase1"]
+  },
+
+  {
+    "Id": "p2_01_place_craft_station",
+    "DisplayName": "Place a Craft Station",
+    "Order": 17,
+    "Phase": 2,
+    "PrerequisiteMissionId": "p1_16_watch_full_loop",
+    "HintText": "Your stockpile is full of sticks! Build a Craft Station to turn them into useful equipment.",
+    "CelebrationMessage": "Craft Station placed! Now you can craft equipment from raw materials.",
+    "Conditions": [
+      {
+        "Type": "PlaceSpecificStructure",
+        "TargetId": "CraftStation",
+        "RequiredCount": 1,
+        "HighlightTarget": "hotbar_craftstation",
+        "StepMessage": "Place a Craft Station from the hotbar. This building turns raw materials into weapons and tools!",
+        "CompletionMessage": "Craft Station placed!"
+      }
+    ],
+    "Rewards": { "gold": 50 },
+    "Tags": ["tutorial", "phase2"]
+  },
+  {
+    "Id": "p2_02_craft_station_gates",
+    "DisplayName": "Connect the Craft Station",
+    "Order": 18,
+    "Phase": 2,
+    "PrerequisiteMissionId": "p2_01_place_craft_station",
+    "HintText": "The Craft Station needs an entrance for deliveries and an exit for finished villagers.",
+    "CelebrationMessage": "Craft Station is connected! Villagers can now deliver materials and leave after crafting.",
+    "Conditions": [
+      {
+        "Type": "PlacePathGateEntrance",
+        "RequiredCount": 1,
+        "HighlightTarget": "hotbar_pathgate",
+        "StepMessage": "Place a PathGate facing toward the Craft Station to create an Entrance. Villagers carrying sticks will walk in and drop them off.",
+        "CompletionMessage": "Entrance placed!"
+      },
+      {
+        "Type": "PlacePathGateExit",
+        "RequiredCount": 1,
+        "HighlightTarget": "hotbar_pathgate",
+        "StepMessage": "Place a PathGate facing away from the Craft Station to create an Exit.",
+        "CompletionMessage": "Exit placed!"
+      }
+    ],
+    "Rewards": { "gold": 25 },
+    "Tags": ["tutorial", "phase2"]
+  },
+  {
+    "Id": "p2_03_select_spear_recipe",
+    "DisplayName": "Select the Wooden Spear Recipe",
+    "Order": 19,
+    "Phase": 2,
+    "PrerequisiteMissionId": "p2_02_craft_station_gates",
+    "HintText": "Open the Craft Station inspector and select the Wooden Spear recipe.",
+    "CelebrationMessage": "Recipe selected! The Craft Station will now produce Wooden Spears from sticks.",
+    "Conditions": [
+      {
+        "Type": "SelectCraftStationRecipe",
+        "TargetId": "craft_wooden_spear",
+        "RequiredCount": 1,
+        "HighlightTarget": "craft_station",
+        "StepMessage": "Click the Craft Station to open its inspector, then use the 'Select Recipe' button to choose the Wooden Spear recipe (4 sticks → 1 Wooden Spear).",
+        "CompletionMessage": "Wooden Spear recipe selected!"
+      }
+    ],
+    "Rewards": { "gold": 25 },
+    "Tags": ["tutorial", "phase2"]
+  },
+  {
+    "Id": "p2_04_place_second_spawner",
+    "DisplayName": "Place a Second Spawner",
+    "Order": 20,
+    "Phase": 2,
+    "PrerequisiteMissionId": "p2_03_select_spear_recipe",
+    "HintText": "One villager isn't enough! Place a second spawner to double your workforce.",
+    "CelebrationMessage": "Second spawner placed! More villagers means faster production.",
+    "Conditions": [
+      {
+        "Type": "PlaceSpecificStructure",
+        "TargetId": "Spawner",
+        "RequiredCount": 1,
+        "HighlightTarget": "hotbar_spawner",
+        "StepMessage": "Place a second Spawner from the hotbar. You'll need more workers for your growing factory!",
+        "CompletionMessage": "Second spawner placed!"
+      },
+      {
+        "Type": "PlacePathGateExit",
+        "RequiredCount": 1,
+        "HighlightTarget": "hotbar_pathgate",
+        "StepMessage": "Place an Exit on the new spawner so villagers can leave.",
+        "CompletionMessage": "Exit placed!"
+      },
+      {
+        "Type": "BuildPath",
+        "RequiredCount": 2,
+        "HighlightTarget": "hotbar_path",
+        "StepMessage": "Connect the new spawner's exit to your existing path network.",
+        "CompletionMessage": "Path connected!"
+      }
+    ],
+    "Rewards": { "gold": 50 },
+    "Tags": ["tutorial", "phase2"]
+  },
+  {
+    "Id": "p2_05_place_filter_splitter",
+    "DisplayName": "Place a Filter Splitter",
+    "Order": 21,
+    "Phase": 2,
+    "PrerequisiteMissionId": "p2_04_place_second_spawner",
+    "HintText": "You need to route villagers carrying sticks to the Craft Station. A Filter Splitter can do that!",
+    "CelebrationMessage": "Filter Splitter placed! Now configure it to route stick-carrying villagers.",
+    "Conditions": [
+      {
+        "Type": "PlaceSpecificStructure",
+        "TargetId": "FilterSplitter",
+        "RequiredCount": 1,
+        "HighlightTarget": "hotbar_filtersplitter",
+        "StepMessage": "Place a Filter Splitter from the hotbar. It routes villagers based on what they're carrying.",
+        "CompletionMessage": "Filter Splitter placed!"
+      }
+    ],
+    "Rewards": { "gold": 25 },
+    "Tags": ["tutorial", "phase2"]
+  },
+  {
+    "Id": "p2_06_configure_filter",
+    "DisplayName": "Configure the Filter",
+    "Order": 22,
+    "Phase": 2,
+    "PrerequisiteMissionId": "p2_05_place_filter_splitter",
+    "HintText": "Set the Filter Splitter to route villagers carrying sticks toward the Craft Station.",
+    "CelebrationMessage": "Filter configured! Villagers carrying sticks will now be routed to the Craft Station.",
+    "Conditions": [
+      {
+        "Type": "ConfigureFilterSplitter",
+        "TargetId": "sticks",
+        "RequiredCount": 1,
+        "HighlightTarget": "filter_splitter",
+        "StepMessage": "Click the Filter Splitter to open its inspector, then set the item filter to 'sticks'. Villagers carrying sticks will be routed to the filtered output direction.",
+        "CompletionMessage": "Filter set to sticks!"
+      }
+    ],
+    "Rewards": { "gold": 25 },
+    "Tags": ["tutorial", "phase2"]
+  },
+  {
+    "Id": "p2_07_connect_filter_craft",
+    "DisplayName": "Connect Filter to Craft Station",
+    "Order": 23,
+    "Phase": 2,
+    "PrerequisiteMissionId": "p2_06_configure_filter",
+    "HintText": "Draw paths from the Filter Splitter's filtered output to the Craft Station entrance.",
+    "CelebrationMessage": "Paths connected! Stick-carrying villagers will now reach the Craft Station.",
+    "Conditions": [
+      {
+        "Type": "BuildPath",
+        "RequiredCount": 3,
+        "HighlightTarget": "hotbar_path",
+        "StepMessage": "Draw a path from the Filter Splitter's filtered output to the Craft Station entrance.",
+        "CompletionMessage": "Paths connected!"
+      }
+    ],
+    "Rewards": { "gold": 25 },
+    "Tags": ["tutorial", "phase2"]
+  },
+  {
+    "Id": "p2_08_watch_spear_craft",
+    "DisplayName": "Watch Spear Crafting",
+    "Order": 24,
+    "Phase": 2,
+    "PrerequisiteMissionId": "p2_07_connect_filter_craft",
+    "HintText": "Villagers carrying sticks will enter the Craft Station, deposit their materials, and if enough sticks are available, the villager will stay and craft a Wooden Spear. They'll leave carrying the finished weapon!",
+    "CelebrationMessage": "A Wooden Spear has been crafted! Your factory is now producing equipment!",
+    "Conditions": [
+      {
+        "Type": "CraftItem",
+        "TargetId": "wooden_spear_0",
+        "RequiredCount": 1,
+        "HighlightTarget": "craft_station",
+        "StepMessage": "Villagers carrying sticks will enter the Craft Station and deposit their materials. Once 4 sticks have been deposited, the next villager to enter will stay and craft a Wooden Spear — then leave carrying it!",
+        "CompletionMessage": "Wooden Spear crafted!"
+      }
+    ],
+    "Rewards": { "gold": 75 },
+    "Tags": ["tutorial", "phase2"]
+  },
+  {
+    "Id": "p2_09_place_warrior_trainer",
+    "DisplayName": "Place a Warrior School",
+    "Order": 25,
+    "Phase": 2,
+    "PrerequisiteMissionId": "p2_08_watch_spear_craft",
+    "HintText": "Untrained villagers can't enter dungeons. Build a Warrior School to train them!",
+    "CelebrationMessage": "Warrior School placed! Connect it to your path network.",
+    "Conditions": [
+      {
+        "Type": "PlaceSpecificStructure",
+        "TargetId": "TrainingBuilding",
+        "RequiredCount": 1,
+        "HighlightTarget": "hotbar_training",
+        "StepMessage": "Place a Training Building (Warrior School) from the hotbar. Villagers who enter will be trained as Warriors.",
+        "CompletionMessage": "Warrior School placed!"
+      }
+    ],
+    "Rewards": { "gold": 50 },
+    "Tags": ["tutorial", "phase2"]
+  },
+  {
+    "Id": "p2_10_trainer_gates_paths",
+    "DisplayName": "Connect the Warrior School",
+    "Order": 26,
+    "Phase": 2,
+    "PrerequisiteMissionId": "p2_09_place_warrior_trainer",
+    "HintText": "Connect the Warrior School with entrance, exit, and paths so villagers can flow through.",
+    "CelebrationMessage": "Warrior School is connected! Villagers will now walk in for training.",
+    "Conditions": [
+      {
+        "Type": "PlacePathGateEntrance",
+        "RequiredCount": 1,
+        "HighlightTarget": "hotbar_pathgate",
+        "StepMessage": "Place an Entrance on the Warrior School so untrained villagers can enter.",
+        "CompletionMessage": "Entrance placed!"
+      },
+      {
+        "Type": "PlacePathGateExit",
+        "RequiredCount": 1,
+        "HighlightTarget": "hotbar_pathgate",
+        "StepMessage": "Place an Exit on the Warrior School so trained Warriors can leave.",
+        "CompletionMessage": "Exit placed!"
+      },
+      {
+        "Type": "BuildPath",
+        "RequiredCount": 2,
+        "HighlightTarget": "hotbar_path",
+        "StepMessage": "Connect the Warrior School to your path network.",
+        "CompletionMessage": "Paths connected!"
+      }
+    ],
+    "Rewards": { "gold": 25 },
+    "Tags": ["tutorial", "phase2"]
+  },
+  {
+    "Id": "p2_11_watch_training",
+    "DisplayName": "Watch Warrior Training",
+    "Order": 27,
+    "Phase": 2,
+    "PrerequisiteMissionId": "p2_10_trainer_gates_paths",
+    "HintText": "An untrained villager will enter the Warrior School. Watch them emerge as a Warrior!",
+    "CelebrationMessage": "Your first Warrior! Trained villagers can now enter dungeons — but it's dangerous without gear!",
+    "Conditions": [
+      {
+        "Type": "VillagerTrainClass",
+        "TargetId": "Warrior",
+        "RequiredCount": 1,
+        "HighlightTarget": "training_building",
+        "StepMessage": "Watch a villager enter the Warrior School and complete training. They'll emerge as a Warrior — ready for adventure!",
+        "CompletionMessage": "Villager trained as Warrior!"
+      }
+    ],
+    "Rewards": { "gold": 75 },
+    "Tags": ["tutorial", "phase2"]
+  },
+  {
+    "Id": "p2_12_place_dungeon",
+    "DisplayName": "Place a Dungeon Portal",
+    "Order": 28,
+    "Phase": 2,
+    "PrerequisiteMissionId": "p2_11_watch_training",
+    "HintText": "Place a Dungeon Portal and connect it. Warriors can enter — but only ~10% survive! Even fewer without gear.",
+    "CelebrationMessage": "Dungeon Portal placed and connected! Route your Warriors to it.",
+    "Conditions": [
+      {
+        "Type": "PlaceSpecificStructure",
+        "TargetId": "DungeonPortal",
+        "RequiredCount": 1,
+        "HighlightTarget": "hotbar_dungeonportal",
+        "StepMessage": "Place a Dungeon Portal from the hotbar. This is where your Warriors will face deadly challenges!",
+        "CompletionMessage": "Dungeon Portal placed!"
+      },
+      {
+        "Type": "PlacePathGateEntrance",
+        "RequiredCount": 1,
+        "HighlightTarget": "hotbar_pathgate",
+        "StepMessage": "Place an Entrance so Warriors can enter the portal.",
+        "CompletionMessage": "Entrance placed!"
+      },
+      {
+        "Type": "PlacePathGateExit",
+        "RequiredCount": 1,
+        "HighlightTarget": "hotbar_pathgate",
+        "StepMessage": "Place an Exit. Survivors will emerge here — if any survive.",
+        "CompletionMessage": "Exit placed!"
+      },
+      {
+        "Type": "BuildPath",
+        "RequiredCount": 2,
+        "HighlightTarget": "hotbar_path",
+        "StepMessage": "Connect the Dungeon Portal to your path network.",
+        "CompletionMessage": "Paths connected!"
+      }
+    ],
+    "Rewards": { "gold": 50 },
+    "Tags": ["tutorial", "phase2"]
+  },
+  {
+    "Id": "p2_13_first_dungeon_run",
+    "DisplayName": "First Dungeon Run!",
+    "Order": 29,
+    "Phase": 2,
+    "PrerequisiteMissionId": "p2_12_place_dungeon",
+    "HintText": "Route a Warrior to the Dungeon Portal. ~90% of adventurers don't survive — even fewer without a weapon! But survivors level up and unlock tier 2 progression.",
+    "CelebrationMessage": "Phase 2 Complete! Your first adventurer entered the dungeon! Warriors with weapons have much better chances. Survivors become Level 2 and unlock higher-tier equipment, resources, and dungeons. Keep building!",
+    "Conditions": [
+      {
+        "Type": "VillagerEnterDungeon",
+        "RequiredCount": 1,
+        "HighlightTarget": "dungeon_portal",
+        "StepMessage": "Route a trained Warrior to the Dungeon Portal. It's lemmings-esque — very few survive, but survivors level up! Tip: Warriors with a Wooden Spear have 4× better survival odds.",
+        "CompletionMessage": "A Warrior entered the dungeon! Phase 2 complete!"
+      }
+    ],
+    "Rewards": { "gold": 150 },
+    "Tags": ["tutorial", "phase2"]
+  }
+]

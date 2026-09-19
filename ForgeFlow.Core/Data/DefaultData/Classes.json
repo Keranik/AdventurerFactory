@@ -1,0 +1,110 @@
+[
+  {
+    "id": "warrior",
+    "name": "Warrior",
+    "preferredGearSlots": ["Weapon", "ChestArmor", "Helmet", "Boots", "Shield"],
+    "preferredDamageTypes": ["Slashing", "Blunt"],
+    "classBonus": 10.0,
+    "baseHealth": 120,
+    "baseMana": 20,
+    "unlockTier": 0,
+    "isHybrid": false,
+    "fusionSourceClassIds": []
+  },
+  {
+    "id": "rogue",
+    "name": "Rogue",
+    "preferredGearSlots": ["Weapon", "Boots", "Cape"],
+    "preferredDamageTypes": ["Piercing"],
+    "classBonus": 8.0,
+    "baseHealth": 80,
+    "baseMana": 40,
+    "unlockTier": 0,
+    "isHybrid": false,
+    "fusionSourceClassIds": []
+  },
+  {
+    "id": "mage",
+    "name": "Mage",
+    "preferredGearSlots": ["Weapon", "Cape", "Accessory"],
+    "preferredDamageTypes": ["Fire", "Ice", "Lightning", "Arcane"],
+    "classBonus": 6.0,
+    "baseHealth": 60,
+    "baseMana": 100,
+    "unlockTier": 0,
+    "isHybrid": false,
+    "fusionSourceClassIds": []
+  },
+  {
+    "id": "paladin",
+    "name": "Paladin",
+    "preferredGearSlots": ["Weapon", "ChestArmor", "Helmet", "Shield", "Boots"],
+    "preferredDamageTypes": ["Holy", "Blunt"],
+    "classBonus": 12.0,
+    "baseHealth": 140,
+    "baseMana": 60,
+    "unlockTier": 3,
+    "isHybrid": false,
+    "fusionSourceClassIds": []
+  },
+  {
+    "id": "barbarian",
+    "name": "Barbarian",
+    "preferredGearSlots": ["Weapon", "Boots", "Pauldrons"],
+    "preferredDamageTypes": ["Slashing", "Blunt"],
+    "classBonus": 14.0,
+    "baseHealth": 160,
+    "baseMana": 10,
+    "unlockTier": 3,
+    "isHybrid": false,
+    "fusionSourceClassIds": []
+  },
+  {
+    "id": "archer",
+    "name": "Archer",
+    "preferredGearSlots": ["Weapon", "Boots", "Cape"],
+    "preferredDamageTypes": ["Piercing"],
+    "classBonus": 9.0,
+    "baseHealth": 75,
+    "baseMana": 30,
+    "unlockTier": 2,
+    "isHybrid": false,
+    "fusionSourceClassIds": []
+  },
+  {
+    "id": "necromancer",
+    "name": "Necromancer",
+    "preferredGearSlots": ["Weapon", "Cape", "Accessory"],
+    "preferredDamageTypes": ["Void", "Arcane"],
+    "classBonus": 7.0,
+    "baseHealth": 55,
+    "baseMana": 120,
+    "unlockTier": 5,
+    "isHybrid": false,
+    "fusionSourceClassIds": []
+  },
+  {
+    "id": "summoner",
+    "name": "Summoner",
+    "preferredGearSlots": ["Weapon", "Cape", "Accessory"],
+    "preferredDamageTypes": ["Nature", "Arcane"],
+    "classBonus": 5.0,
+    "baseHealth": 65,
+    "baseMana": 110,
+    "unlockTier": 4,
+    "isHybrid": false,
+    "fusionSourceClassIds": []
+  },
+  {
+    "id": "spellsword",
+    "name": "Spellsword",
+    "preferredGearSlots": ["Weapon", "ChestArmor", "Cape", "Accessory"],
+    "preferredDamageTypes": ["Slashing", "Arcane", "Fire"],
+    "classBonus": 11.0,
+    "baseHealth": 100,
+    "baseMana": 80,
+    "unlockTier": 5,
+    "isHybrid": true,
+    "fusionSourceClassIds": ["warrior", "mage"]
+  }
+]

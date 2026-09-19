@@ -1,0 +1,136 @@
+[
+  {
+    "id": "craft_iron_sword",
+    "inputs": [
+      { "itemId": "iron_ingot", "quantity": 2 }
+    ],
+    "essenceCost": 0,
+    "outputItemId": "iron_sword_1",
+    "outputQuantity": 1,
+    "requiredTier": 1
+  },
+  {
+    "id": "craft_iron_dagger",
+    "inputs": [
+      { "itemId": "iron_ingot", "quantity": 1 }
+    ],
+    "essenceCost": 0,
+    "outputItemId": "iron_dagger_1",
+    "outputQuantity": 1,
+    "requiredTier": 1
+  },
+  {
+    "id": "craft_wooden_staff",
+    "inputs": [
+      { "itemId": "wood_plank", "quantity": 3 }
+    ],
+    "essenceCost": 5,
+    "outputItemId": "wooden_staff_1",
+    "outputQuantity": 1,
+    "requiredTier": 1
+  },
+  {
+    "id": "craft_iron_helm",
+    "inputs": [
+      { "itemId": "iron_ingot", "quantity": 2 }
+    ],
+    "essenceCost": 0,
+    "outputItemId": "iron_helm_1",
+    "outputQuantity": 1,
+    "requiredTier": 1
+  },
+  {
+    "id": "craft_iron_chestplate",
+    "inputs": [
+      { "itemId": "iron_ingot", "quantity": 4 }
+    ],
+    "essenceCost": 0,
+    "outputItemId": "iron_chestplate_1",
+    "outputQuantity": 1,
+    "requiredTier": 1
+  },
+  {
+    "id": "craft_steel_sword",
+    "inputs": [
+      { "itemId": "steel_ingot", "quantity": 3 }
+    ],
+    "essenceCost": 0,
+    "outputItemId": "steel_sword_2",
+    "outputQuantity": 1,
+    "requiredTier": 2
+  },
+  {
+    "id": "craft_steel_chestplate",
+    "inputs": [
+      { "itemId": "steel_ingot", "quantity": 5 }
+    ],
+    "essenceCost": 0,
+    "outputItemId": "steel_chestplate_2",
+    "outputQuantity": 1,
+    "requiredTier": 2
+  },
+  {
+    "id": "craft_mithril_blade",
+    "inputs": [
+      { "itemId": "mithril_ingot", "quantity": 4 },
+      { "itemId": "raw_mana", "quantity": 2 }
+    ],
+    "essenceCost": 20,
+    "outputItemId": "mithril_blade_4",
+    "outputQuantity": 1,
+    "requiredTier": 4
+  },
+  {
+    "id": "craft_dragonbone_greatsword",
+    "inputs": [
+      { "itemId": "dragonbone_shard", "quantity": 6 },
+      { "itemId": "raw_mana", "quantity": 5 }
+    ],
+    "essenceCost": 50,
+    "outputItemId": "dragonbone_greatsword_6",
+    "outputQuantity": 1,
+    "requiredTier": 6
+  },
+  {
+    "id": "fuse_steel_greatsword",
+    "inputs": [
+      { "itemId": "iron_sword_1", "quantity": 2 },
+      { "itemId": "iron_chestplate_1", "quantity": 1 }
+    ],
+    "essenceCost": 10,
+    "outputItemId": "steel_greatsword_2",
+    "outputQuantity": 1,
+    "requiredTier": 2
+  },
+  {
+    "id": "fuse_steel_chestplate",
+    "inputs": [
+      { "itemId": "iron_chestplate_1", "quantity": 2 },
+      { "itemId": "iron_helm_1", "quantity": 1 }
+    ],
+    "essenceCost": 10,
+    "outputItemId": "steel_chestplate_2",
+    "outputQuantity": 1,
+    "requiredTier": 2
+  },
+  {
+    "id": "rest_basic",
+    "inputs": [],
+    "essenceCost": 0,
+    "outputItemId": "",
+    "outputQuantity": 0,
+    "requiredTier": 1,
+    "craftDuration": 5.0
+  },
+  {
+    "id": "craft_wooden_spear",
+    "inputs": [
+      { "itemId": "sticks", "quantity": 4 }
+    ],
+    "essenceCost": 0,
+    "outputItemId": "wooden_spear_0",
+    "outputQuantity": 1,
+    "requiredTier": 0,
+    "craftDuration": 4.0
+  }
+]
